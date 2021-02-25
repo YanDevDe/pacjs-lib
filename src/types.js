@@ -21,9 +21,8 @@ function Signer(obj) {
   );
 }
 exports.Signer = Signer;
-const SATOSHI_MAX = 21 * 1e14;
 function Satoshi(value) {
-  return typeforce.UInt53(value) && value <= SATOSHI_MAX;
+  return value >= 0 && value <= Number.MAX_SAFE_INTEGER;
 }
 exports.Satoshi = Satoshi;
 // external dependent types
